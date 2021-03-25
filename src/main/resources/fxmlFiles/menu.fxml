@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MenuAnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="startMenu" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="489.0" layoutY="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-background: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox alignment="TOP_RIGHT" prefHeight="394.0" prefWidth="185.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goToCalculator" onMouseEntered="#changeBackgroundToCalculator" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Calculator" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#goToPokeStats" onMouseEntered="#changeBackgroundToPokeStats" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="PokeStats" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#goToPokemon" onMouseEntered="#changeBackgroundToPokemon" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Pokemon" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#goToTrainer" onMouseEntered="#changeBackgroundToTrainer" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Trainer" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#goToUserPokemons" onMouseEntered="#changeBackgroundToUserPokemons" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="User Pokemons" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToAbilities" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Ability" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToTypes" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Type" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToAttack" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Attack" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToMoveset" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Moveset" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToItem" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Item" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToBadge" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Badge" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToRoute" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Route" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToSprite" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Sprite" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeBackgroundToTypechart" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="Typechart" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#backToStartPage" style="-fx-pref-width: 70;" styleClass="MenuButtons" stylesheets="@../CSS/style.css" text="&lt; Back" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

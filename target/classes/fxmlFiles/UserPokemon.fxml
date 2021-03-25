@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: rgb(50, 50, 50);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserPokemonController">
+   <children>
+      <VBox layoutX="1.0" layoutY="69.0" maxWidth="205.0" minWidth="205.0" spacing="5.0" style="-fx-border-color: linear-gradient(to top right, #F56217, #0ed2f7); -fx-border-width: 1 1 0 0; -fx-border-radius: 0 10 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <TextField fx:id="PokemonSearchField" alignment="CENTER" onKeyReleased="#searchForPokemon" promptText="search bar" style="-fx-background-color: transperant; -fx-border-color: linear-gradient(to bottom right, #F56217, #0ed2f7); -fx-border-radius: 40; -fx-text-inner-color: white;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <ScrollPane hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent;" translateX="1.0" translateY="-1.0">
+               <content>
+                  <AnchorPane fx:id="PokemonAnchor">
+                     <children>
+                        <VBox fx:id="PokemonContainer" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <VBox fx:id="FilteredPokemonContainer" spacing="5.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </AnchorPane>
+               </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
+      <HBox alignment="CENTER" layoutX="64.0" prefHeight="54.0" prefWidth="536.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="User Pokemons" textFill="#44ff00">
+               <font>
+                  <Font name="Verdana" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TabPane layoutX="211.0" layoutY="71.0" prefHeight="329.0" prefWidth="389.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="70.0">
+        <tabs>
+          <Tab text="Main">
+            <content>
+              <AnchorPane maxHeight="280.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" layoutX="6.0" layoutY="6.0" prefHeight="301.0" prefWidth="389.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Species:" textFill="WHITE">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Nickname:" textFill="WHITE" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Gender:" textFill="WHITE" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Level:" textFill="WHITE" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Nature:" textFill="WHITE" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Held Item:" textFill="WHITE" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                                 <graphic>
+                                    <ImageView fx:id="HeldItemImage" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../Img/Item/Hard_Stone.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                              <Label text="Ability:" textFill="WHITE" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Friendship:" textFill="WHITE" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="SpeciesName" onAction="#changedSpecies" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <TextField fx:id="Nickname" maxWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <ComboBox fx:id="Gender" prefWidth="100.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <TextField fx:id="Level" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <ComboBox fx:id="Nature" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="HeldItem" onAction="#changeHeldItemImage" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="Ability" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <TextField fx:id="Friendship" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Met">
+            <content>
+              <AnchorPane>
+                     <children>
+                        <GridPane alignment="TOP_CENTER" prefHeight="147.0" prefWidth="389.0" AnchorPane.bottomAnchor="154.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Met Lcoation:" textFill="WHITE">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Ball:" textFill="WHITE" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                                 <graphic>
+                                    <ImageView fx:id="PokeballImage" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../Img/Pokeballs/Poke_Ball.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                              <ComboBox fx:id="MetLocation" maxHeight="0.0" maxWidth="150.0" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="PokeBall" maxWidth="150.0" onAction="#setPokeballImage" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Stats">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" layoutX="47.0" layoutY="46.0" prefHeight="301.0" prefWidth="389.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Base" textFill="WHITE" GridPane.columnIndex="1" />
+                              <Label text="IVs" textFill="WHITE" GridPane.columnIndex="2" />
+                              <Label text="EVs" textFill="WHITE" GridPane.columnIndex="3" />
+                              <Label text="Stats" textFill="WHITE" GridPane.columnIndex="4" />
+                              <Label text="HP:" textFill="WHITE" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Attack:" textFill="WHITE" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Defense:" textFill="WHITE" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Sp.Attack:" textFill="WHITE" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Sp.Defense:" textFill="WHITE" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Speed:" textFill="WHITE" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Total:" textFill="WHITE" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="IvHp" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="IvAttack" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextField fx:id="IvDefense" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <TextField fx:id="IvSpecialAttack" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextField fx:id="IvSpecialDefense" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <TextField fx:id="IvSpeed" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <TextField fx:id="EvHp" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="EvAttack" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <TextField fx:id="EvDefense" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="EvSpecialAttack" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextField fx:id="EvSpecialDefense" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <TextField fx:id="EvSpeed" alignment="CENTER" maxWidth="50.0" style="-fx-text-inner-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Label fx:id="BaseHp" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="BaseAttack" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="BaseDefense" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="BaseSpecialAttack" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="BaseSpecialDefense" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="BaseSpeed" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label fx:id="BaseTotal" text="000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label fx:id="IvTotal" text="000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label fx:id="EvTotal" text="000" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <Label fx:id="StatsHp" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label fx:id="StatsAttack" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label fx:id="StatsDefense" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label fx:id="StatsSpecialAttack" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Label fx:id="StatsSpecialDefense" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <Label fx:id="StatsSpeed" text="000" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Attack">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" layoutX="63.0" layoutY="36.0" prefHeight="301.0" prefWidth="389.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="150.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="50.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="50.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Move" textFill="WHITE" />
+                              <Label text="PP" textFill="WHITE" GridPane.columnIndex="1" />
+                              <Label text="PP Ups" textFill="WHITE" GridPane.columnIndex="2" />
+                              <ComboBox fx:id="Attack1Move" maxWidth="150.0" onAction="#setPPForMove1" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="Attack2Move" maxWidth="150.0" onAction="#setPPForMove2" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="Attack3Move" onAction="#setPPForMove3" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="Attack4Move" onAction="#setPPForMove4" prefWidth="150.0" style="-fx-text-inner-color: black;" GridPane.rowIndex="4" />
+                              <Label fx:id="Attack1PP" text="40" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="Attack2PP" text="40" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="Attack3PP" text="40" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="Attack4PP" text="40" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="Attack1PPUps" disable="true" maxWidth="20.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="Attack2PPUps" disable="true" maxWidth="20.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="Attack3PPUps" disable="true" maxWidth="50.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="Attack4PPUps" disable="true" maxWidth="50.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Options">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="301.0" prefWidth="389.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="CreatePokemonButton" minWidth="300.0" mnemonicParsing="false" onAction="#createPokemonAndAddToUser" stylesheets="@../CSS/style.css" text="Create Pokemon And Add To User" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="AddEditDeleteButton" />
+                                    <String fx:value="AddButton" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button fx:id="AddToUserButton" minWidth="300.0" mnemonicParsing="false" onAction="#addPokemonToTheUser" stylesheets="@../CSS/style.css" text="Add To User" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="AddEditDeleteButton" />
+                                    <String fx:value="AddButton" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="EditPokemonButton" minWidth="300.0" mnemonicParsing="false" onAction="#editPokemonToTheUser" stylesheets="@../CSS/style.css" text="Edit Pokemon" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="AddEditDeleteButton" />
+                                    <String fx:value="EditButton" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="RemoveFromUserButton" minWidth="300.0" mnemonicParsing="false" onAction="#removePokemonFromUser" stylesheets="@../CSS/style.css" text="Remove Pokemon From User" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="AddEditDeleteButton" />
+                                    <String fx:value="DeleteButton" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="DeletePokemonButton" minWidth="300.0" mnemonicParsing="false" onAction="#deletePokemon" stylesheets="@../CSS/style.css" text="Delete Pokemon" textFill="WHITE">
+                                 <font>
+                                    <Font name="Verdana" size="15.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="AddEditDeleteButton" />
+                                    <String fx:value="DeleteButton" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <VBox layoutX="603.0" layoutY="70.0" maxWidth="195.0" minWidth="195.0" spacing="5.0" style="-fx-border-color: linear-gradient(to top left, #F56217, #0ed2f7); -fx-border-width: 1 0 0 1; -fx-border-radius: 10 0 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <TextField fx:id="UserPokemonSearchField" alignment="CENTER" onKeyReleased="#searchForUserPokemons" promptText="search bar" style="-fx-background-color: transperant; -fx-border-color: linear-gradient(to bottom right, #F56217, #0ed2f7); -fx-border-radius: 40; -fx-text-inner-color: white;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent;">
+               <content>
+                  <AnchorPane fx:id="UserPokemonAnchor">
+                     <children>
+                        <VBox fx:id="UserPokemonContainer" spacing="5.0" />
+                        <VBox fx:id="FilteredUserPokemonContainer" spacing="5.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Label layoutX="659.0" layoutY="46.0" prefHeight="17.0" prefWidth="84.0" text="User Pokemon" textFill="WHITE" AnchorPane.rightAnchor="57.0" />
+      <Label layoutX="75.0" layoutY="46.0" text="Pokemons" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+.userBackground {
+    -fx-background-color: lightblue;
+}
+.trainerBackground {
+    -fx-background-color: rgba(255, 127, 80, 0.5);
+}
+.middlePart {
+ -fx-background-color: lightgray;
+ -fx-pref-width: 100%;
+}
+.maxWidth {
+    -fx-pref-width: 100000;
+}
+
+
+/* Pane */
+.titled-pane {
+    -fx-text-fill: -fx-text-base-color;
+}
+.titled-pane > .title {
+    -fx-background-color: -fx-box-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+.titled-pane > .title > .arrow-button {
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+/* .titled-pane > .title:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-text-fill: rgb(0, 0, 0);
+}
+.titled-pane > .title:hover > .arrow-button .arrow {
+    -fx-background-color: white;
+} */
+
+.titled-pane:focused {
+    -fx-text-fill: rgb(255, 255, 255);
+}
+.userBackground .titled-pane:focused > .title {
+    -fx-color: -fx-focus-color;
+}
+.trainerBackground .titled-pane:focused > .title {
+   -fx-color: rgb(222, 23, 56);
+}
+.titled-pane:focused > .title > .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow {
+    -fx-rotate: -90;
+}

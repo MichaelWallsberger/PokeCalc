@@ -1,0 +1,186 @@
+.startPicture {
+    -fx-background-image: url('../Img/Background/Emerald.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+.startMenu {
+    -fx-background-image: url('../Img/Menu/calculator.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgb(20, 20, 20);
+}
+
+.startContainer {
+    -fx-min-width: 130px;
+    -fx-max-width: 130px;
+    -fx-max-height: 30px;
+    -fx-min-height: 30px;
+    -fx-background-color: linear-gradient(to right, #67b26b, #4ca2cb);
+    -fx-color: rgb(0, 0, 0);
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-padding: 5px 0;
+}
+
+.startButton.label .text {
+    -fx-font-size: 18px;
+    -fx-text-fill: rgb(255, 255, 255);
+}
+
+.startArrows {
+    -fx-font-size: 25px;
+}
+
+.newGamePicture {
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+
+
+.calcButtonInUsage {
+    -fx-background-color: rgba(0, 255, 0, 0.6);
+    -fx-border-color: rgb(142,255,0);
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-padding: 4px;
+}
+.calcButtonInUsage:hover {
+    -fx-background-color: rgb(0, 255, 0);
+}
+.calcButtonsNotUsed {
+    -fx-background-color: rgb(233, 233, 233);
+    -fx-border-color: gray;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+    -fx-padding: 4px;
+}
+.calcButtonsNotUsed:hover {
+    -fx-background-color: rgb(245, 245, 245);
+    -fx-border-color: rgb(0, 255, 255);
+}
+
+.createPokemonHBox {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-padding: 0 0 0 5px;
+}
+.createPokemonLabel {
+    -fx-color: rgb(255, 255, 255);
+    -fx-font-size: 15px;
+    -fx-padding: 0 0 0 10px;
+}
+.createPokemonHBox:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.3);
+}
+.createPokemonHBoxActive {
+    -fx-background-color: rgba(0, 255, 255, 0.6);
+    -fx-padding: 0 0 0 5px;
+}
+
+.createPokeStatsImageBackground {
+    -fx-background-image: url('../Img/PokemonSprites/quagsire-f.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+
+.createSmallSpriteNextToLabel {
+    -fx-background-image: url('../Img/PokemonSprites/quagsire-f.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-min-width: 15px;
+    -fx-min-height: 15px;
+}
+
+.passivePokemonBox {
+    -fx-border-color: linear-gradient(to bottom right, rgba(245, 98, 23, 0.4), rgba(14, 210, 247, 0.4));
+}
+.activePokemonBox {
+    -fx-border-color: linear-gradient(to bottom right, rgba(245, 98, 23, 1), rgba(14, 210, 247, 1));
+    -fx-background-color: rgba(0, 255, 255, 0.1);
+}
+
+.pokeballBackground {
+    -fx-background-image: url('../Img/Pokeballs/000.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80% 80%;
+    -fx-background-position: center;
+}
+
+.pokeballActiveBox {
+    -fx-background-color: linear-gradient(to bottom right, rgba(245, 98, 23, 0.6), rgba(14, 210, 247, 0.6));
+    -fx-background-radius: 7px;
+
+    -fx-border-color: linear-gradient(to bottom right, rgba(245, 98, 23, 1), rgba(14, 210, 247, 1));
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-border-radius: 7px;
+}
+
+.calcPokemonBorder {
+    -fx-background-image: url('../Img/PokemonSprites/quagsire-f.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80% 80%;
+    -fx-background-position: center;
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+
+    -fx-border-color: linear-gradient(to bottom right, rgba(245, 98, 23, 1), rgba(14, 210, 247, 1));
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-radius: 7px;
+}
+
+.calcTrainerBorder {
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+
+    -fx-border-color: linear-gradient(to bottom right, rgba(245, 98, 23, 1), rgba(14, 210, 247, 1));
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-radius: 7px;
+}
+
+.calcTrainerImage {
+    -fx-background-image: url('../Img/PokemonSprites/quagsire-f.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80% 80%;
+    -fx-background-position: center;
+}
+
+.AddEditDeleteButton {
+    -fx-background-radius: 10px;
+    -fx-background-color: none;
+
+    -fx-border-style: solid;
+    -fx-border-width: 5;
+    -fx-border-radius: 10px;
+}
+.AddButton {
+    -fx-border-color: rgb(68, 255, 0);
+}
+.EditButton {
+    -fx-border-color: rgb(255, 191, 0);
+}
+.DeleteButton {
+    -fx-border-color: rgb(255, 0, 0);
+}
+.AddButton:hover {
+    -fx-background-color: rgba(68, 255, 0, 0.5);
+}
+.EditButton:hover {
+    -fx-background-color: rgba(255, 191, 0, 0.5);
+}
+.DeleteButton:hover {
+    -fx-background-color: rgba(255, 0, 0, 0.5);
+}
+
+.MenuButtons {
+    -fx-background-color: linear-gradient(to right, rgba(15, 12, 41, 0.8), rgba(48, 43, 99, 0.8), rgba(36, 36, 62, 0.8));
+    -fx-pref-width: 150px;
+}
+.MenuButtons:hover {
+    -fx-background-color: linear-gradient(to right, #74ebd5, #acb6e5);
+}
